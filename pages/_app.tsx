@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <header className='md:container md:mx-auto md:px-0 px-4 h-24'>
         <div className="flex justify-between mt-2">
-          <Image src='/logo-distext.jpg' width={100} height={80} />
+          <Link href='/'>
+            <Image src='/logo-distext.jpg' className='cursor-pointer' width={100} height={80} />
+          </Link>
           <nav className='flex gap-6 my-auto text-slate-500'>
             <Link href='/'>Inicio</Link>
             <Link href='/tienda'>Tienda</Link>

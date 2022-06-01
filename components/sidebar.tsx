@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { useState } from "react"
 
 const categories = [
@@ -40,15 +41,19 @@ const Sidebar = (): JSX.Element => {
 
   return (
     <section className="sidebar cursor-pointer">
-      <ul className="text-sm list-disc">
+      <ul className="list-disc">
         {
           categories.map((category, i) => (
             <>
-              <li onMouseOver={() => setSelected(i)}>{category.category}</li>
+              <Link href={`/tienda?cat=${category.category}`}>
+                <li className="font-bold my-1" onMouseOver={() => setSelected(i)}>{category.category}</li>
+              </Link>
               <ul className={`list-disc ${selected === i ? '' : 'hidden'}`}>
                 {
                   category.subcategories.map(subcat => (
-                    <li className="ml-4">{subcat}</li>
+                    <Link href={`/tienda?cat=${category.category}&sub=${subcat}`}>
+                      <li className="ml-4">{subcat}</li>
+                    </Link>
                   ))
                 }
               </ul>

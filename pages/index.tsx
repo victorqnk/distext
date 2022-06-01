@@ -18,14 +18,16 @@ const Home: NextPage = () => {
             <p className='text-blue-500 md:text-7xl text-5xl'>Trabajamos para</p>
             <p className='text-white md:text-7xl text-5xl'>Uniformar a tu empresa</p>
             <div className="bg-blue-800 uppercase rounded-full w-48 my-10 block mx-auto p-3 cursor-pointer">
-              <span className="text-lg text-white">saber más</span>
+              <a href="#main">
+                <span className="text-lg text-white">saber más</span>
+              </a>
             </div>
-            <span className="material-icons text-white" style={{ fontSize: '48px' }}>south</span>
+            <span className="material-icons text-white cursor-pointer" style={{ fontSize: '48px' }}>south</span>
           </div>
         </section>
       </div>
 
-      <section className="container mx-auto text-center mb-48">
+      <section id='main' className="container mx-auto text-center mb-48">
         <h1 className='text-5xl text-blue-900 mb-5'>Grupo Distext</h1>
         <p className='md:text-4xl text-3xl w-2/3 mx-auto font-light'>Somos una empresa mexicana dedicada a la fabricación de uniformes industriales, casuales, de seguridad, médicos y personalizados.</p>
       </section>

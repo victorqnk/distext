@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
           </div>
           <input type="text" placeholder='Asunto' className="block w-full my-3 p-3" />
           <textarea placeholder='Tu mensaje' className="block w-full p-3" />
-          <div className="mt-3 px-24 py-4 text-center uppercase text-white bg-blue-900 rounded-xl cursor-pointer">
+          <div className="w-64 mt-3 py-4 text-center uppercase text-white bg-blue-900 rounded-xl cursor-pointer">
             <span>Enviar mensaje</span>
           </div>
         </div>
