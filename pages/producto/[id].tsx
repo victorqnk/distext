@@ -1,6 +1,6 @@
-import Link from "next/link"
+import Head from "next/head"
+import Image from "next/image"
 import { useRouter } from "next/router"
-import Card from "../../components/card"
 import { items } from "../../items"
 
 const Item = (): JSX.Element => {
@@ -11,15 +11,19 @@ const Item = (): JSX.Element => {
 
   return (
     <div className="bg-gray-100 w-full text-gray-500 pb-12">
+      <Head>
+        <title>{item?.title}</title>
+        <meta name="description" content={item?.description} />
+      </Head>
       <div className="container mx-auto">
         <p className="text-xs py-3 text-gray-400">Tienda / {`${item?.category} / ${item?.title}`}</p>
         <div className="flex">
           <div className="w-1/2">
-            <img src={images[0]} className='cursor-pointer' />
+            <Image src={`/images/${id}/1.png`} className='cursor-pointer' alt="" width={640} height={420} />
             <div className="grid grid-cols-3 gap-2">
               {
-                images.map(image => (
-                  <img src={image} className='cursor-pointer' />
+                images.map((image, index) => (
+                  <Image src={`/images/${id}/${index + 1}.png`} className='cursor-pointer' alt="" width={320} height={210} key={index} />
                 ))
               }
             </div>

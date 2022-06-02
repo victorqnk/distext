@@ -45,13 +45,13 @@ const Sidebar = (): JSX.Element => {
         {
           categories.map((category, i) => (
             <>
-              <Link href={`/tienda?cat=${category.category}`}>
+              <Link href={`/tienda?cat=${category.category}`} key={i}>
                 <li className="font-bold my-1" onMouseOver={() => setSelected(i)}>{category.category}</li>
               </Link>
               <ul className={`list-disc ${selected === i ? '' : 'hidden'}`}>
                 {
-                  category.subcategories.map(subcat => (
-                    <Link href={`/tienda?cat=${category.category}&sub=${subcat}`}>
+                  category.subcategories.map((subcat, i) => (
+                    <Link href={`/tienda?cat=${category.category}&sub=${subcat}`} key={i}>
                       <li className="ml-4">{subcat}</li>
                     </Link>
                   ))

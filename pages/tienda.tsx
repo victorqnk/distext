@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Card from '../components/card'
@@ -40,8 +40,8 @@ const Store: NextPage = () => {
             <div className="grid grid-cols-3 gap-2 pb-4">
               {
                 products[current].map((item, i) => {
-                  const image = item.images.split(', ') ?? 'https://via.placeholder.com/150'
-                  return <Card id={item.id} title={item.title} image={image[0]} />
+                  // const image = item.images.split(', ') ?? 'https://via.placeholder.com/150'
+                  return <Card id={item.id} title={item.title} image={`/images/${item.id}/1.png`} key={i} />
                 })
               }
             </div>
@@ -70,6 +70,14 @@ const Store: NextPage = () => {
               <span className={`${current === 5 ? 'text-blue-800 font-bold' : ''} mx-3 cursor-pointer`}
                 onClick={() => setCurrent(5)}>
                   6
+              </span>
+              <span className={`${current === 6 ? 'text-blue-800 font-bold' : ''} mx-3 cursor-pointer`}
+                onClick={() => setCurrent(6)}>
+                  7
+              </span>
+              <span className={`${current === 7 ? 'text-blue-800 font-bold' : ''} mx-3 cursor-pointer`}
+                onClick={() => setCurrent(7)}>
+                  8
               </span>
               <span className="font-bold">{'>'}</span>
             </div>
