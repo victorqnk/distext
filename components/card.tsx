@@ -1,4 +1,4 @@
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 
 interface Props {
@@ -11,8 +11,8 @@ const Card = ({ id, title, image }: Props): JSX.Element => {
   return (
     <Link href={`/producto/${id}`}>
       <div className='cursor-pointer hover:bg-gray-200 rounded'>
-        {/* <img src={`/images/${id}/1.png`} /> */}
-        <Image src={image} className='bg-center h-48' alt="" width={320} height={210} />
+        <img src={image} />
+        {/* <Image src={image} className='bg-center h-48' alt="" width={320} height={210} /> */}
         <h3 className='font-bold my-4 px-4'>{title}</h3>
       </div>
     </Link>
